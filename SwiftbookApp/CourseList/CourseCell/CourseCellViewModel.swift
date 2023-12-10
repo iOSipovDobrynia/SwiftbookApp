@@ -2,20 +2,20 @@
 //  CourseCellViewModel.swift
 //  SwiftbookApp
 //
-//  Created by Alexey Efimov on 05.10.2022.
-//  Copyright © 2022 Alexey Efimov. All rights reserved.
+//  Created by Goodwasp on 10.12.2023.
+//  Copyright © 2023 Alexey Efimov. All rights reserved.
 //
 
 import Foundation
 
 protocol CourseCellViewModelProtocol {
-    var courserName: String { get }
+    var courseName: String { get }
     var imageData: Data? { get }
     init(course: Course)
 }
 
 class CourseCellViewModel: CourseCellViewModelProtocol {
-    var courserName: String {
+    var courseName: String {
         course.name
     }
     

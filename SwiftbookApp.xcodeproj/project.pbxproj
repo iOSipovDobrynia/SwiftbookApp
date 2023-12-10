@@ -19,6 +19,8 @@
 		A823524122F7170F00FE65E0 /* DataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823524022F7170F00FE65E0 /* DataManger.swift */; };
 		A86B500525A1C7D200BA8E4B /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86B500425A1C7D200BA8E4B /* ImageManager.swift */; };
 		E3B343C22B260E1E00573D0B /* CourseDatailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B343C12B260E1E00573D0B /* CourseDatailsViewModel.swift */; };
+		E3B343C42B2642F800573D0B /* CourseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B343C32B2642F800573D0B /* CourseListViewModel.swift */; };
+		E3B343C62B26470B00573D0B /* CourseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B343C52B26470B00573D0B /* CourseCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		A823524022F7170F00FE65E0 /* DataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManger.swift; sourceTree = "<group>"; };
 		A86B500425A1C7D200BA8E4B /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		E3B343C12B260E1E00573D0B /* CourseDatailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDatailsViewModel.swift; sourceTree = "<group>"; };
+		E3B343C32B2642F800573D0B /* CourseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewModel.swift; sourceTree = "<group>"; };
+		E3B343C52B26470B00573D0B /* CourseCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				A823521C22F6AEAC00FE65E0 /* CourseListViewController.swift */,
+				E3B343C32B2642F800573D0B /* CourseListViewModel.swift */,
 				A823523622F6EAE800FE65E0 /* CourseCell */,
 			);
 			path = CourseList;
@@ -126,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				A823523C22F6F1E900FE65E0 /* CourseCell.swift */,
+				E3B343C52B26470B00573D0B /* CourseCellViewModel.swift */,
 			);
 			path = CourseCell;
 			sourceTree = "<group>";
@@ -222,7 +228,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A823523D22F6F1E900FE65E0 /* CourseCell.swift in Sources */,
+				E3B343C42B2642F800573D0B /* CourseListViewModel.swift in Sources */,
 				A823523822F6EBD000FE65E0 /* Course.swift in Sources */,
+				E3B343C62B26470B00573D0B /* CourseCellViewModel.swift in Sources */,
 				E3B343C22B260E1E00573D0B /* CourseDatailsViewModel.swift in Sources */,
 				A823523522F6EAD700FE65E0 /* CourseDetailsViewController.swift in Sources */,
 				A86B500525A1C7D200BA8E4B /* ImageManager.swift in Sources */,
