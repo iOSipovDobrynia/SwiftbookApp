@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		A823523D22F6F1E900FE65E0 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823523C22F6F1E900FE65E0 /* CourseCell.swift */; };
 		A823524122F7170F00FE65E0 /* DataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823524022F7170F00FE65E0 /* DataManger.swift */; };
 		A86B500525A1C7D200BA8E4B /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86B500425A1C7D200BA8E4B /* ImageManager.swift */; };
+		E3B343C22B260E1E00573D0B /* CourseDatailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B343C12B260E1E00573D0B /* CourseDatailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		A823523C22F6F1E900FE65E0 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		A823524022F7170F00FE65E0 /* DataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManger.swift; sourceTree = "<group>"; };
 		A86B500425A1C7D200BA8E4B /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		E3B343C12B260E1E00573D0B /* CourseDatailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDatailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				A823523422F6EAD700FE65E0 /* CourseDetailsViewController.swift */,
+				E3B343C12B260E1E00573D0B /* CourseDatailsViewModel.swift */,
 			);
 			path = CourseDetails;
 			sourceTree = "<group>";
@@ -172,8 +175,9 @@
 		A823520F22F6AEAC00FE65E0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = "Alexey Efimov";
 				TargetAttributes = {
 					A823521622F6AEAC00FE65E0 = {
@@ -219,6 +223,7 @@
 			files = (
 				A823523D22F6F1E900FE65E0 /* CourseCell.swift in Sources */,
 				A823523822F6EBD000FE65E0 /* Course.swift in Sources */,
+				E3B343C22B260E1E00573D0B /* CourseDatailsViewModel.swift in Sources */,
 				A823523522F6EAD700FE65E0 /* CourseDetailsViewController.swift in Sources */,
 				A86B500525A1C7D200BA8E4B /* ImageManager.swift in Sources */,
 				A823523B22F6ECB900FE65E0 /* NetworkManager.swift in Sources */,
@@ -288,6 +293,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -350,6 +356,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

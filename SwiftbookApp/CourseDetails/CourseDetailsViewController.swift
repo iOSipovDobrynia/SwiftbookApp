@@ -17,38 +17,35 @@ class CourseDetailsViewController: UIViewController {
     @IBOutlet private var favoriteButton: UIButton!
     
     var course: Course!
-    
-    private var isFavorite = false
-    
+    var viewModel: CourseDetailsViewModelProtocol! {
+        didSet {
+            courseNameLabel.text = viewModel.courseName
+            numberOfLessonsLabel.text = viewModel.numberOfLessons
+            numberOfTestsLabel.text = viewModel.numberOfTests
+            if let imageData = viewModel.imageData {
+                courseImage.image = UIImage(data: imageData)
+            }
+            viewModel.viewModelDidChange = { [unowned self] viewModel in
+                self.setStatusForFavoriteButton(viewModel.isFavorite)
+            }
+        }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadFavoriteStatus()
+        viewModel = CourseDetailsViewModel(course: course)
         setupUI()
     }
     
     @IBAction func toggleFavorite() {
-        isFavorite.toggle()
-        setStatusForFavoriteButton()
-        DataManager.shared.setFavoriteStatus(for: course.name, with: isFavorite)
+        viewModel.favoriteButtonPressed()
     }
     
     private func setupUI() {
-        courseNameLabel.text = course.name
-        numberOfLessonsLabel.text = "Lessons: \(course.numberOfLessons)"
-        numberOfTestsLabel.text = "Tests: \(course.numberOfTests)"
-        
-        if let imageData = ImageManager.shared.fetchImageData(from: course.imageUrl) {
-            courseImage.image = UIImage(data: imageData)
-        }
-        
-        setStatusForFavoriteButton()
+        setStatusForFavoriteButton(viewModel.isFavorite)
     }
     
-    private func setStatusForFavoriteButton() {
-        favoriteButton.tintColor = isFavorite ? .red : .gray
-    }
-    
-    private func loadFavoriteStatus() {
-        isFavorite = DataManager.shared.getFavoriteStatus(for: course.name)
+    private func setStatusForFavoriteButton(_ status: Bool) {
+        favoriteButton.tintColor = status ? .red : .gray
     }
 }
