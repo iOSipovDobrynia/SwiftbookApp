@@ -18,6 +18,7 @@ struct CourseDetailsDataStore {
 
 class CourseDetailsPresenter: CourseDetailsViewOutputProtocol {
     
+    
     // MARK: - Private properties
     unowned private let view: CourseDetailsViewInputProtocol
     
@@ -33,10 +34,18 @@ class CourseDetailsPresenter: CourseDetailsViewOutputProtocol {
     func showDetails() {
         interactor.provideCourseDetails()
     }
+    
+    func favoriteButtonPressed() {
+        interactor.toggleFavoriteButtonStatus()
+    }
 }
 
 // MARK: - CourseDetailsInteractorOutputProtocol
 extension CourseDetailsPresenter: CourseDetailsInteractorOutputProtocol {
+    func receiveFavoriteStatus(with status: Bool) {
+        view.displayImageFavoriteButton(with: status)
+    }
+    
     func receiveCourseDetails(with dataStore: CourseDetailsDataStore) {
         view.displayCourseName(with: dataStore.courseName)
         view.displayNumberOfLessons(with: "Lessons: \(dataStore.numberOfLessons)")

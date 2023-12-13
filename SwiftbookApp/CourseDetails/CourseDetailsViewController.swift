@@ -19,6 +19,7 @@ protocol CourseDetailsViewInputProtocol: AnyObject {
 protocol CourseDetailsViewOutputProtocol {
     init(view: CourseDetailsViewInputProtocol)
     func showDetails()
+    func favoriteButtonPressed()
 }
 
 class CourseDetailsViewController: UIViewController {
@@ -47,7 +48,7 @@ class CourseDetailsViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func toggleFavorite() {
-
+        presenter.favoriteButtonPressed()
     }
 }
 
