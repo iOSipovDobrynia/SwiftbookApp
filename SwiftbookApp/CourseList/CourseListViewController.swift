@@ -8,6 +8,15 @@
 
 import UIKit
 
+protocol CourseListViewInputProtocol {
+    
+}
+
+protocol CourseListViewOutputProtocol{
+    init(view: CourseListViewInputProtocol)
+    func dod()
+}
+
 class CourseListViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
