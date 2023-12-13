@@ -22,7 +22,7 @@ protocol CourseDetailsViewOutputProtocol {
     func favoriteButtonPressed()
 }
 
-class CourseDetailsViewController: UIViewController {
+final class CourseDetailsViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet private var courseNameLabel: UILabel!
@@ -32,17 +32,14 @@ class CourseDetailsViewController: UIViewController {
     @IBOutlet private var favoriteButton: UIButton!
     
     // MARK: - Public properties
-    var course: Course!
     var presenter: CourseDetailsViewOutputProtocol!
     
     // MARK: - Private Properties
     private var isFavorite = false
-    private let configurator: CourseDetailsConfiguratorInputProtocol = CourseDetailsConfigurator()
     
     // MARK: - View's lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurator.configure(with: self, and: course)
         presenter.showDetails()
     }
     

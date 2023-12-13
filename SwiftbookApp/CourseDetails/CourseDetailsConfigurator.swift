@@ -9,13 +9,14 @@
 import Foundation
 
 protocol CourseDetailsConfiguratorInputProtocol {
-    func configure(with view: CourseDetailsViewController, and course: Course)
+    func configure(with view: CourseDetailsViewController, and course: Course?)
 }
 
-class CourseDetailsConfigurator: CourseDetailsConfiguratorInputProtocol {
+final class CourseDetailsConfigurator: CourseDetailsConfiguratorInputProtocol {
     
     // MARK: - Methods
-    func configure(with view: CourseDetailsViewController, and course: Course) {
+    func configure(with view: CourseDetailsViewController, and course: Course?) {
+        guard let course = course else { return }
         let presenter = CourseDetailsPresenter(view: view)
         view.presenter = presenter
         let interactor = CourseDetailsInteractor(presenter: presenter, course: course)

@@ -16,7 +16,7 @@ struct CourseDetailsDataStore {
     let isFavorite: Bool
 }
 
-class CourseDetailsPresenter: CourseDetailsViewOutputProtocol {
+final class CourseDetailsPresenter: CourseDetailsViewOutputProtocol {
     
     // MARK: - Private properties
     unowned private let view: CourseDetailsViewInputProtocol

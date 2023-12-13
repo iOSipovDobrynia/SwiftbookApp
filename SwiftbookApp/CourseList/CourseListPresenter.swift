@@ -12,7 +12,7 @@ struct CourseListDataStore {
     let courses: [Course]
 }
 
-class CourseListPresenter: CourseListViewOutputProtocol {
+final class CourseListPresenter: CourseListViewOutputProtocol {
     
     // MARK: - Public properties
     var interactor: CourseListInteractorInputProtocol!
@@ -31,12 +31,20 @@ class CourseListPresenter: CourseListViewOutputProtocol {
     func viewDidLoad() {
         interactor.fetchCourses()
     }
+    
+    func didTappedCell(at indexPath: IndexPath) {
+        guard let course = dataStore?.courses[indexPath.row] else { return }
+        router.openCourseDetailsViewController(with: course)
+    }
 }
 
 // MARK: - CourseListInteractorOutputProtocol
 extension CourseListPresenter: CourseListInteractorOutputProtocol {
     func coursesDidReceive(with dataStore: CourseListDataStore) {
         self.dataStore = dataStore
-        view.display(courses: dataStore.courses)
+        let section = CourseSectionViewModel()
+
+        section.rows = dataStore.courses.map{ CourseCellViewModel(course: $0) }
+        view.reloadData(for: section)
     }
 }

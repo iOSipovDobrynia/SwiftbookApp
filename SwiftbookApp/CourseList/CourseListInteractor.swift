@@ -17,7 +17,7 @@ protocol CourseListInteractorOutputProtocol: AnyObject {
     func coursesDidReceive(with dataStore: CourseListDataStore)
 }
 
-class CourseListInteractor: CourseListInteractorInputProtocol {
+final class CourseListInteractor: CourseListInteractorInputProtocol {
     
     // MARK: - Private properties
     private unowned let presenter: CourseListInteractorOutputProtocol

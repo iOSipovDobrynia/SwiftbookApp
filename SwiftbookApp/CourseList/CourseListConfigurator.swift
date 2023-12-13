@@ -12,7 +12,7 @@ protocol CourseListConfiguratorInputProtocol {
     func configure(with view: CourseListViewController)
 }
 
-class CourseListConfigurator: CourseListConfiguratorInputProtocol {
+final class CourseListConfigurator: CourseListConfiguratorInputProtocol {
 
     // MARK: - Methods
     func configure(with view: CourseListViewController) {

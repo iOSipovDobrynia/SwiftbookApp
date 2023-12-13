@@ -13,7 +13,7 @@ protocol CourseListRouterInputProtocol {
     func openCourseDetailsViewController(with course: Course)
 }
 
-class CourseListRouter: CourseListRouterInputProtocol {
+final class CourseListRouter: CourseListRouterInputProtocol {
     
     // MARK: - Private properties
     private unowned let view: CourseListViewController
@@ -25,6 +25,6 @@ class CourseListRouter: CourseListRouterInputProtocol {
     
     // MARK: - Public methods
     func openCourseDetailsViewController(with course: Course) {
-        
+        view.performSegue(withIdentifier: "showDetails", sender: course)
     }
 }

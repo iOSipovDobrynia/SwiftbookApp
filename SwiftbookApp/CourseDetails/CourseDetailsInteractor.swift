@@ -20,7 +20,7 @@ protocol CourseDetailsInteractorOutputProtocol: AnyObject {
     func receiveFavoriteStatus(with status: Bool)
 }
 
-class CourseDetailsInteractor: CourseDetailsInteractorInputProtocol {
+final class CourseDetailsInteractor: CourseDetailsInteractorInputProtocol {
     
     // MARK: - Public properties
     var isFavorite: Bool {

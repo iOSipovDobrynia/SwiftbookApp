@@ -8,14 +8,18 @@
 
 import Foundation
 
-class DataManager {
+final class DataManager {
     
+    // MARK: - Public properties
     static let shared = DataManager()
     
+    // MARK: - Private properties
     private let userDefaults = UserDefaults()
     
+    // MARK: - Initialization
     private init() {}
     
+    // MARK: - Public methods
     func setFavoriteStatus(for courseName: String, with status: Bool) {
         userDefaults.set(status, forKey: courseName)
     }

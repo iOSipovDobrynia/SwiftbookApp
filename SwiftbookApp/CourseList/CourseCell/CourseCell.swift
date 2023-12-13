@@ -8,12 +8,30 @@
 
 import UIKit
 
-class CourseCell: UITableViewCell {
-    func configure(with course: Course) {
+protocol CourseCellModelRepresentable {
+    var viewModel: CourseCellViewModelProtocol? { get }
+}
+
+final class CourseCell: UITableViewCell, CourseCellModelRepresentable {
+    
+    // MARK: - Public properties
+    var viewModel: CourseCellViewModelProtocol? {
+        didSet {
+            updateView()
+        }
+    }
+    
+    // MARK: - Private methods
+    private func updateView() {
+        guard let viewModel = viewModel as? CourseCellViewModel else {
+            return
+        }
+        
         var content = defaultContentConfiguration()
-        content.text = course.name
-        guard let imageData = ImageManager.shared.fetchImageData(from: course.imageUrl) else { return }
-        content.image = UIImage(data: imageData)
+        content.text = viewModel.courseName
+        if let imageData = viewModel.imageData {
+            content.image = UIImage(data: imageData)
+        }
         contentConfiguration = content
     }
 }

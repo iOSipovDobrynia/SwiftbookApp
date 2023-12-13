@@ -8,14 +8,18 @@
 
 import Foundation
 
-class NetworkManager {
+final class NetworkManager {
     
+    // MARK: - Public properties
     static let shared = NetworkManager()
     
+    // MARK: - Private properties
     private let api = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
     
+    // MARK: - Initialization
     private init() {}
     
+    // MARK: - Public methods
     func fetchData(completion: @escaping (_ courses: [Course]) -> Void) {
         guard let url = URL(string: api) else { return }
         
