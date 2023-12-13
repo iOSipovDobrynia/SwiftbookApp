@@ -18,7 +18,6 @@ struct CourseDetailsDataStore {
 
 class CourseDetailsPresenter: CourseDetailsViewOutputProtocol {
     
-    
     // MARK: - Private properties
     unowned private let view: CourseDetailsViewInputProtocol
     

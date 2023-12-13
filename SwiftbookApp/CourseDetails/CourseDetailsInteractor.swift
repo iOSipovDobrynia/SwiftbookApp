@@ -22,7 +22,7 @@ protocol CourseDetailsInteractorOutputProtocol: AnyObject {
 
 class CourseDetailsInteractor: CourseDetailsInteractorInputProtocol {
     
-    
+    // MARK: - Public properties
     var isFavorite: Bool {
         get {
             DataManager.shared.getFavoriteStatus(for: course.name)
@@ -32,14 +32,17 @@ class CourseDetailsInteractor: CourseDetailsInteractorInputProtocol {
         }
     }
     
+    // MARK: - Private properties
     private unowned let presenter: CourseDetailsInteractorOutputProtocol
     private let course: Course
     
+    // MARK: - Initialization
     required init(presenter: CourseDetailsInteractorOutputProtocol, course: Course) {
         self.course = course
         self.presenter = presenter
     }
     
+    // MARK: - Public methods
     func toggleFavoriteButtonStatus() {
         isFavorite.toggle()
         presenter.receiveFavoriteStatus(with: isFavorite)

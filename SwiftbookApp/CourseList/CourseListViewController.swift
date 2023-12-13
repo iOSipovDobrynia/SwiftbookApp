@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol CourseListViewInputProtocol {
-    
+protocol CourseListViewInputProtocol: AnyObject {
+    func display(courses: [Course])
 }
 
 protocol CourseListViewOutputProtocol{
     init(view: CourseListViewInputProtocol)
-    func dod()
+    func viewDidLoad()
 }
 
 class CourseListViewController: UIViewController {
@@ -24,12 +24,16 @@ class CourseListViewController: UIViewController {
     private var activityIndicator: UIActivityIndicatorView?
     private var courses: [Course] = []
     
+    var presenter: CourseListViewOutputProtocol!
+    private let configurator: CourseListConfiguratorInputProtocol = CourseListConfigurator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configurator.configure(with: self)
         tableView.rowHeight = 100
         activityIndicator = showActivityIndicator(in: view)
         setupNavigationBar()
-        getCourses()
+        presenter.viewDidLoad()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -37,16 +41,6 @@ class CourseListViewController: UIViewController {
             return
         }
         detailVC.course = sender as? Course
-    }
-    
-    private func getCourses() {
-        NetworkManager.shared.fetchData { courses in
-            self.courses = courses
-            DispatchQueue.main.async {
-                self.activityIndicator?.stopAnimating()
-                self.tableView.reloadData()
-            }
-        }
     }
     
     private func setupNavigationBar() {
@@ -93,5 +87,13 @@ extension CourseListViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let course = courses[indexPath.row]
         performSegue(withIdentifier: "showDetails", sender: course)
+    }
+}
+
+extension CourseListViewController: CourseListViewInputProtocol {
+    func display(courses: [Course]) {
+        self.courses = courses
+        tableView.reloadData()
+        activityIndicator?.stopAnimating()
     }
 }

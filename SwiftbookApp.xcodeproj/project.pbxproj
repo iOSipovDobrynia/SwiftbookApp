@@ -18,6 +18,7 @@
 		A823523D22F6F1E900FE65E0 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823523C22F6F1E900FE65E0 /* CourseCell.swift */; };
 		A823524122F7170F00FE65E0 /* DataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823524022F7170F00FE65E0 /* DataManger.swift */; };
 		A86B500525A1C7D200BA8E4B /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86B500425A1C7D200BA8E4B /* ImageManager.swift */; };
+		E3D117732B2A2D00004328E6 /* CourseListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D117722B2A2D00004328E6 /* CourseListRouter.swift */; };
 		E3EA8A8A2B28DEB100591648 /* CourseDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EA8A892B28DEB100591648 /* CourseDetailsPresenter.swift */; };
 		E3EA8A8C2B28DEC000591648 /* CourseDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EA8A8B2B28DEC000591648 /* CourseDetailsInteractor.swift */; };
 		E3EA8A8E2B28DECF00591648 /* CourseDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EA8A8D2B28DECF00591648 /* CourseDetailsConfigurator.swift */; };
@@ -40,6 +41,7 @@
 		A823523C22F6F1E900FE65E0 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		A823524022F7170F00FE65E0 /* DataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManger.swift; sourceTree = "<group>"; };
 		A86B500425A1C7D200BA8E4B /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		E3D117722B2A2D00004328E6 /* CourseListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListRouter.swift; sourceTree = "<group>"; };
 		E3EA8A892B28DEB100591648 /* CourseDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsPresenter.swift; sourceTree = "<group>"; };
 		E3EA8A8B2B28DEC000591648 /* CourseDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsInteractor.swift; sourceTree = "<group>"; };
 		E3EA8A8D2B28DECF00591648 /* CourseDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsConfigurator.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				E3EA8A8F2B28DFAB00591648 /* CourseListPresenter.swift */,
 				E3EA8A912B28DFBF00591648 /* CourseListInteractor.swift */,
 				E3EA8A932B28DFE900591648 /* CourseListConfigurator.swift */,
+				E3D117722B2A2D00004328E6 /* CourseListRouter.swift */,
 				A823523622F6EAE800FE65E0 /* CourseCell */,
 			);
 			path = CourseList;
@@ -192,7 +195,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = "Alexey Efimov";
 				TargetAttributes = {
 					A823521622F6AEAC00FE65E0 = {
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D117732B2A2D00004328E6 /* CourseListRouter.swift in Sources */,
 				A823523D22F6F1E900FE65E0 /* CourseCell.swift in Sources */,
 				A823523822F6EBD000FE65E0 /* Course.swift in Sources */,
 				E3EA8A8C2B28DEC000591648 /* CourseDetailsInteractor.swift in Sources */,
@@ -279,6 +283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -342,6 +347,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
